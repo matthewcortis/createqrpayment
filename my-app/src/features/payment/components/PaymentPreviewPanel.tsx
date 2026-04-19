@@ -95,11 +95,11 @@ export const PaymentPreviewPanel = ({
             Mã QR
           </p>
 
-          <div className="mx-auto mt-3 aspect-square w-full max-w-[350px] rounded-2xl border border-white/70 bg-white/70 p-4 shadow-xl shadow-slate-900/15 sm:max-w-[370px]">
+          <div className="mx-auto mt-3 w-full max-w-[350px] overflow-hidden rounded-2xl border border-white/70 bg-white/70 p-3 shadow-xl shadow-slate-900/15 sm:max-w-[370px] sm:p-4">
             <img
               src={qrImageLink}
               alt="QR thanh toán"
-              className="h-full w-full object-contain"
+              className="block h-auto w-full rounded-xl object-contain"
               loading="lazy"
             />
           </div>
@@ -152,11 +152,11 @@ export const PaymentPreviewPanel = ({
         Mã QR
       </p>
 
-      <div className="aspect-square w-full max-w-[330px] rounded-2xl border border-slate-200 bg-white p-4 shadow-xl shadow-slate-900/10">
+      <div className="w-full max-w-[330px] overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-xl shadow-slate-900/10 sm:p-4">
         <img
           src={qrImageLink}
           alt="QR thanh toán"
-          className="h-full w-full object-contain"
+          className="block h-auto w-full rounded-xl object-contain"
           loading="lazy"
         />
       </div>
