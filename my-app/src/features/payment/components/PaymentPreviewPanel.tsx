@@ -29,7 +29,8 @@ const copyButtonClass =
 const buildReceiverInfoRows = (payload: PaymentPayload): ReceiverInfoRow[] => {
   const amountLabel = payload.amount
     ? currencyFormatter.format(Number(payload.amount))
-    : 'Khách tự nhập số tiền'
+    : '0'
+  const amountToCopy = payload.amount || '0'
 
   return [
     {
@@ -40,9 +41,9 @@ const buildReceiverInfoRows = (payload: PaymentPayload): ReceiverInfoRow[] => {
       value: payload.accountNo,
     },
     {
-      canCopy: Boolean(payload.amount),
+      canCopy: true,
       copyKey: 'amount',
-      copyValue: payload.amount,
+      copyValue: amountToCopy,
       label: 'Số tiền',
       value: amountLabel,
     },
@@ -141,7 +142,7 @@ export const PaymentPreviewPanel = ({
 
   const amountLabel = payload.amount
     ? currencyFormatter.format(Number(payload.amount))
-    : 'Khách tự nhập số tiền'
+    : '0'
 
   return (
     <aside

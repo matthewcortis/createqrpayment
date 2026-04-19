@@ -93,7 +93,7 @@ export const PaymentPage = () => {
       <section className="mx-auto grid w-full max-w-6xl overflow-hidden rounded-3xl border border-slate-300/70 bg-white/80 shadow-2xl shadow-slate-900/15 backdrop-blur md:grid-cols-[1.15fr_0.85fr]">
         <div className="border-b border-slate-200 p-6 sm:p-8 md:border-b-0 md:border-r">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">
-            VietQR Dynamic Link 
+            LÃO RÂU BẠC
           </p>
 
           <PaymentBuilderPanel

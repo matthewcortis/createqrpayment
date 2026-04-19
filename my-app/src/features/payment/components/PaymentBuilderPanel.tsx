@@ -139,7 +139,7 @@ export const PaymentBuilderPanel = ({
           >
             Tạo link
           </button>
-          <p className="text-sm text-slate-500">QR theo đúng cú pháp Quick Link VietQR.</p>
+          <p className="text-sm text-slate-500"></p>
         </div>
       </form>
     </>
