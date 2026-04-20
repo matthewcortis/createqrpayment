@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import { PaymentBuilderPanel } from '../components/PaymentBuilderPanel'
 import { PaymentPreviewPanel } from '../components/PaymentPreviewPanel'
@@ -15,6 +15,7 @@ import {
   normalizePaymentPayload,
   parseSharedPayload,
 } from '../utils/payment-links'
+import { updatePaymentMetadata } from '../utils/payment-meta'
 
 export const PaymentPage = () => {
   const currentUrl = window.location.href
@@ -40,6 +41,15 @@ export const PaymentPage = () => {
 
   const activePayload = receiverMode ? sharedPayload : createdPayload
   const qrImageLink = activePayload ? buildVietQrLink(activePayload) : ''
+
+  useEffect(() => {
+    updatePaymentMetadata({
+      payload: activePayload,
+      qrImageLink,
+      receiverMode,
+      url: shareLink || currentUrl,
+    })
+  }, [activePayload, currentUrl, qrImageLink, receiverMode, shareLink])
 
   const handleFieldChange = (
     field: keyof PaymentPayload,

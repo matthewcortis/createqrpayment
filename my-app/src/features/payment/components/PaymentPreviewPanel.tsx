@@ -212,7 +212,7 @@ export const PaymentPreviewPanel = ({
               target="_blank"
               rel="noreferrer"
             >
-              Mở trang khách
+              Xem trước link
             </a>
           </div>
         </div>
