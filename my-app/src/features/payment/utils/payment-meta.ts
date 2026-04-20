@@ -33,7 +33,8 @@ const setMetaTag = ({ content, key, selector }: MetaTarget): void => {
   document.head.append(element)
 }
 
-const getFallbackImage = (): string => `${window.location.origin}/og-preview.png`
+const getFallbackImage = (): string =>
+  `${window.location.origin}/Logo-VNPAY-QR-1.webp`
 
 const buildReceiverDescription = (payload: PaymentPayload): string => {
   const amountText = payload.amount
